@@ -68,7 +68,7 @@ class Server:
             page_size (int): The number of items per page.
 
         Returns:
-            dict: A dictionary containing pagination information and the data for the requested page.
+            dict: A dictionary containing pagination information.
         """
         data = self.get_page(page, page_size)
         total_items = len(self.dataset())
