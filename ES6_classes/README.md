@@ -1,0 +1,1 @@
+class jv es6
