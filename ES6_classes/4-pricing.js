@@ -30,11 +30,11 @@ export default class Pricing {
         return `${this._amount} ${this._currency.displayFullCurrency()}`;
     }
 
-    convertPrice(exchangeRate) {
+    static convertPrice(amount, exchangeRate) {
         if (typeof exchangeRate !== 'number') {
             throw new TypeError('Exchange rate must be a number');
         }
-        const convertedAmount = this._amount * exchangeRate;
-        return `${convertedAmount} ${this._currency.displayFullCurrency()}`;
+        const convertedAmount = amount * exchangeRate;
+        return convertedAmount;
     }
 }
