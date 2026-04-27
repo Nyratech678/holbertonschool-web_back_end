@@ -1,19 +1,20 @@
 export default class Building {
-    constructor(sqft) {
-        if (new.target === Building) {
-            throw new Error('Cannot create instance of abstract class Building');
-        }
-        if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
-            throw new Error('Class extending Building must override evacuationWarningMessage');
-        }
-        this._sqft = sqft;
+  constructor(sqft) {
+    if (typeof sqft !== 'number') {
+      throw new TypeError('Sqft must be a number');
     }
+    this._sqft = sqft;
 
-    get sqft() {
-        return this._sqft;
+    if (this.constructor !== Building 
+        && this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
     }
+  }
+  
+  get sqft() {
+    return this._sqft;
+  }
 
-    evacuationWarningMessage() {
-        throw new Error('Class extending Building must override evacuationWarningMessage');
-    }
+  evacuationWarningMessage() {
+  }
 }
