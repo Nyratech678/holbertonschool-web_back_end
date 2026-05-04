@@ -5,4 +5,3 @@ function getListStudentsIds() {
         { id: 5, firstName: 'Serena', location: 'San Francisco'},
     ];
 }
-su
