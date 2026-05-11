@@ -27,9 +27,11 @@ async function countStudents(path) {
 
     sortedFields.forEach((field) => {
       const names = fields[field];
-      console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
+      console.log(
+        `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`,
+      );
     });
-  } catch (error) {
+  } catch (_error) {
     throw new Error('Cannot load the database');
   }
 }
