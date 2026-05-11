@@ -11,6 +11,6 @@ rl.on('line', (input) => {
   console.log(`Your name is: ${input}`);
 });
 
-rl.on('close', () => {
+process.stdin.on('end', () => {
   console.log('This important software is now closing');
 });
